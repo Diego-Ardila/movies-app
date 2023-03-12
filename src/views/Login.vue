@@ -57,7 +57,7 @@ export default {
       this.emailValidator();
       this.passwordValidator();
       if(!this.errors.email && !this.errors.password) {
-        const token = 'myToken123456';
+        const token = import.meta.env.VITE_TOKEN;
         localStorage.setItem('token', token);
         this.$router.push("/");
       }

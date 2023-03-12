@@ -1,5 +1,5 @@
 <script setup>
-import HelloWorld from "./components/HelloWorld.vue";
+import Title from "./components/Title.vue";
 </script>
 
 <template>
@@ -14,7 +14,7 @@ import HelloWorld from "./components/HelloWorld.vue";
       />
 
       <div v-if="showHeader" class="wrapper">
-        <HelloWorld msg="You did it!" />
+        <Title />
 
         <nav>
           <router-link to="/">Home</router-link>
