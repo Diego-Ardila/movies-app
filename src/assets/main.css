@@ -50,3 +50,23 @@ button:hover {
   cursor: pointer;
   background-color: hsla(160, 100%, 37%, 0.2);
 }
+/* Paginator styles */
+.VuePagination > nav {
+  display: flex;
+  flex-direction: row-reverse;
+  justify-content: space-between;
+  padding: 10px 0;
+}
+.pagination {
+  display: flex;
+  list-style: none;
+}
+.pagination a {
+  padding: 5px;
+}
+.pagination a.active {
+  border: 1px solid hsla(160, 100%, 37%, 1);
+}
+.pagination > li:hover {
+  cursor: pointer;
+}
