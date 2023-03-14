@@ -1,5 +1,5 @@
 <template>
-  <div class="movies-list-container">
+  <div :class="className">
     <MoviesItem
       v-for="movie in movies.results"
       :key="movie.id"
@@ -14,7 +14,7 @@
       <p>Release date: {{movie.release_date}}</p>
       <p>Popularity: {{movie.popularity}}</p>
       <p>Vote average: {{movie.vote_average}}</p>
-      <router-link to="/favorites">More details</router-link>
+      <router-link :to="{name: 'movie-detail', params: {id: movie.id}}">More details</router-link>
     </MoviesItem>
   </div>
 </template>
@@ -23,7 +23,7 @@
 import MoviesItem from "./MoviesItem.vue";
 
 export default {
-  props: ['movies'],
+  props: ['movies', 'className'],
   data() {
     return {
       favoriteMovies: []
@@ -57,19 +57,16 @@ export default {
 <style scoped>
 @media (min-width: 1024px) {
   .movies-list-container {
+    height: calc(100vh - 95px);
+    overflow-y: auto;
+  }
+  .favorites-list-container {
     height: calc(100vh - 50px);
     overflow-y: auto;
   }
-  .movies-list-container::-webkit-scrollbar {
-    width: 5px;
-    height: 8px;
-    background-color: var(--color-text);
-  }
-  .movies-list-container::-webkit-scrollbar-thumb {
-    background: black;
-  }
-  a {
-    margin-top: 10px;
-  }
+}
+
+a {
+  margin-top: 10px;
 }
 </style>

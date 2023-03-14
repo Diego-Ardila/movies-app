@@ -26,6 +26,12 @@ const router = new VueRouter({
       meta: { requiresAuth: true },
     },
     {
+      path: "/movie/:id",
+      name: "movie-detail",
+      component: () => import("../views/MovieDetailView.vue"),
+      meta: { requiresAuth: true },
+    },
+    {
       path: "*",
       redirect: "/",
     },
