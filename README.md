@@ -15,6 +15,10 @@ Movie detail view with an id param in the url to identify and request the specif
 Favorites managed totally with UI logic and browser localStorage for remembering selections, and a client side paginated(5 items per page) list view for review the favorites list, where you can also select/unselect your favorite movies:
 ![movies-app-4](https://user-images.githubusercontent.com/67027844/225074515-6538b4f9-3e7a-4596-b38f-6efa89dd757d.gif)
 
+### Responsive view
+![movies-app-5](https://user-images.githubusercontent.com/67027844/225082209-b4f9b355-77d2-46d4-8bf3-e7f6a393fafc.gif)
+
+
 ## Recommended IDE Setup
 
 [VSCode](https://code.visualstudio.com/) + [Volar](https://marketplace.visualstudio.com/items?itemName=Vue.volar) (and disable Vetur) + [TypeScript Vue Plugin (Volar)](https://marketplace.visualstudio.com/items?itemName=Vue.vscode-typescript-vue-plugin).
