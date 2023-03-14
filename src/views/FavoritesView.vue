@@ -1,6 +1,6 @@
 <template>
   <main class="favorites-container">
-    <MoviesList :movies="movies"/>
+    <MoviesList className="favorites-list-container" :movies="movies"/>
     <Pagination
       v-if="movies.results.length > 0"
       v-model="page"

@@ -1,5 +1,5 @@
 <template>
-  <div class="movies-list-container">
+  <div :class="className">
     <MoviesItem
       v-for="movie in movies.results"
       :key="movie.id"
@@ -23,7 +23,7 @@
 import MoviesItem from "./MoviesItem.vue";
 
 export default {
-  props: ['movies'],
+  props: ['movies', 'className'],
   data() {
     return {
       favoriteMovies: []
@@ -55,6 +55,17 @@ export default {
 </script>
 
 <style scoped>
+@media (min-width: 1024px) {
+  .movies-list-container {
+    height: calc(100vh - 95px);
+    overflow-y: auto;
+  }
+  .favorites-list-container {
+    height: calc(100vh - 50px);
+    overflow-y: auto;
+  }
+}
+
 a {
   margin-top: 10px;
 }

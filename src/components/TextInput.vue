@@ -3,9 +3,10 @@
     <label v-if="label" for="text-input">{{ label }}:</label>
     <input
       :value="value"
-      :type="type"
+      :type="type || 'text'"
       name="text-input"
       class="text-input"
+      :placeholder="placeholder || ''"
       @input="$emit('input', $event.target.value)"
       @blur="$emit('blur', $event)"
       @focus="$emit('focus', $event)"
@@ -17,7 +18,7 @@
 
 <script>
 export default {
-  props: ['value', 'label', 'type', 'error', 'id']
+  props: ['value', 'label', 'type', 'error', 'id', 'placeholder']
 }
 </script>
 

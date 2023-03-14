@@ -40,3 +40,24 @@ export const getMovie = async (id) => {
     throw error;
   }
 };
+
+export const searchMovies = async (page, query) => {
+  try {
+    const response = await axios({
+      baseURL: import.meta.env.VITE_MOVIES_APP_SERVER_URL,
+      url: "search/movie",
+      method: "GET",
+      params: {
+        language: "en-US",
+        page,
+        query,
+      },
+      headers: {
+        Authorization: "Bearer " + token,
+      },
+    });
+    return response.data;
+  } catch (error) {
+    throw error;
+  }
+};
