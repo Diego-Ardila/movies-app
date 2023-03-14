@@ -3,7 +3,7 @@
     <loader v-if="loading"/>
     <MoviesList v-else :movies="movies"/>
     <Pagination
-      v-if="!loading && page"
+      v-if="!loading && movies.results.length > 0"
       v-model="page"
       :records="movies.total_results"
       :per-page="20"
@@ -27,7 +27,7 @@ export default {
   },
   data() {
     return {
-      loading: true,
+      loading: false,
       page: 1,
       movies: {
         results: [],

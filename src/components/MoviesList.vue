@@ -14,7 +14,7 @@
       <p>Release date: {{movie.release_date}}</p>
       <p>Popularity: {{movie.popularity}}</p>
       <p>Vote average: {{movie.vote_average}}</p>
-      <router-link to="/favorites">More details</router-link>
+      <router-link :to="{name: 'movie-detail', params: {id: movie.id}}">More details</router-link>
     </MoviesItem>
   </div>
 </template>
@@ -55,21 +55,7 @@ export default {
 </script>
 
 <style scoped>
-@media (min-width: 1024px) {
-  .movies-list-container {
-    height: calc(100vh - 50px);
-    overflow-y: auto;
-  }
-  .movies-list-container::-webkit-scrollbar {
-    width: 5px;
-    height: 8px;
-    background-color: var(--color-text);
-  }
-  .movies-list-container::-webkit-scrollbar-thumb {
-    background: black;
-  }
-  a {
-    margin-top: 10px;
-  }
+a {
+  margin-top: 10px;
 }
 </style>
