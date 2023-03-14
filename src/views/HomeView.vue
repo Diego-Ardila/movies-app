@@ -5,7 +5,7 @@
     <Pagination
       v-if="!loading && page"
       v-model="page"
-      :records="movies.total_pages"
+      :records="movies.total_results"
       :per-page="20"
       @paginate="onPaginate"
       :options="{chunk: 7}"
